@@ -3,22 +3,24 @@
 ## Usage
 
 ```shell
-docker run --rm -v TEMPLATES_DIR:/templates -e TEMPLATE=TEMPLATE_FILE jinja2-docker [CONTEXT]
+docker run --rm -v TEMPLATES_DIR:/templates -e TEMPLATE=TEMPLATE_FILE ghcr.io/netbek/jinja2-docker:main [CONTEXT]
 ```
 
 ## Examples
 
-Render `./example.jinja2` without context:
+Clone the repository to view examples.
 
-```shell
-docker run --rm -v .:/templates -e TEMPLATE=example.jinja2 jinja2-docker
-```
+1. Render `./example.jinja2` without context:
 
-Render `./example.jinja2` with context:
+    ```shell
+    docker run --rm -v ./examples:/templates -e TEMPLATE=no_context.jinja2 ghcr.io/netbek/jinja2-docker:main
+    ```
 
-```shell
-docker run --rm -v .:/templates -e TEMPLATE=example.jinja2 jinja2-docker "key=value" "other_key=other_value"
-```
+2. Render `./example.jinja2` with context:
+
+    ```shell
+    docker run --rm -v ./examples:/templates -e TEMPLATE=context.jinja2 ghcr.io/netbek/jinja2-docker:main "fruit=pineapple" "veg=broccoli"
+    ```
 
 ## License
 
