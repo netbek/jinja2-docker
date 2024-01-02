@@ -10,13 +10,13 @@ docker run --rm -v TEMPLATES_DIR:/templates -e TEMPLATE=TEMPLATE_FILE ghcr.io/ne
 
 Clone the repository to view examples.
 
-1. Render `./example.jinja2` without context:
+1. Render a template without context:
 
     ```shell
     docker run --rm -v ./examples:/templates -e TEMPLATE=no_context.jinja2 ghcr.io/netbek/jinja2-docker:main
     ```
 
-2. Render `./example.jinja2` with context:
+2. Render a template with context:
 
     ```shell
     docker run --rm -v ./examples:/templates -e TEMPLATE=context.jinja2 ghcr.io/netbek/jinja2-docker:main "fruit=pineapple" "veg=broccoli"
