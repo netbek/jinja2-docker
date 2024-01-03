@@ -10,7 +10,7 @@ PRETTIER_PARSER_CHOICES = ("yaml",)
 
 if __name__ == "__main__":
     template = os.environ.get("TEMPLATE")
-    pretty = bool(os.environ.get("PRETTY"))
+    pretty = os.environ.get("PRETTY", "0").lower() in ("1", "true")
     prettier_parser = os.environ.get("PRETTIER_PARSER")
 
     if not template:
